@@ -68,7 +68,7 @@ public class KhaiBaoLopSinhVien {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        SinhVien2 sv = new SinhVien2();
+        SinhVien sv = new SinhVien();
         sv.setMaSV("B20DCCN001");
         sv.setHoTen(sc.nextLine());
         sv.setLop(sc.nextLine());

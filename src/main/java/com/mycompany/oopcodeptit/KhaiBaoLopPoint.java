@@ -13,7 +13,7 @@ class Point{
         this.x = x;
         this.y = y;
     }
-    public Point(Point1 p) {
+    public Point(Point p) {
         this.x = p.x;
         this.y = p.y;
     }
@@ -33,10 +33,10 @@ class Point{
     public void setY(double y) {
         this.y = y;
     }
-    public double distance(Point1 p) {
+    public double distance(Point p) {
         return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
     }
-    public double distance(Point1 p1, Point1 p2) {
+    public double distance(Point p1, Point p2) {
         return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
     }
 
@@ -54,8 +54,8 @@ public class KhaiBaoLopPoint {
         int t = sc.nextInt();
         sc.nextLine();
         while(t-->0){
-            Point1 p1 = new Point1(sc.nextDouble(), sc.nextDouble());
-            Point1 p2 = new Point1(sc.nextDouble(), sc.nextDouble());
+            Point p1 = new Point(sc.nextDouble(), sc.nextDouble());
+            Point p2 = new Point(sc.nextDouble(), sc.nextDouble());
             System.out.printf("%.4f\n", p1.distance(p2));
         }
     }

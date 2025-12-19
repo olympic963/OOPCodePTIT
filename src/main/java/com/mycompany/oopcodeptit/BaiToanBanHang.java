@@ -69,7 +69,7 @@ class HoaDon{
         return String.format("%s %s %s %d %d", this.maHD, this.khachHang, this.matHangg, this.soLuong, (long)this.matHangg.getGiaBan()*this.soLuong);
     }
 }
-public class BaiToanMatHang {
+public class BaiToanBanHang {
     public static String chuanHoaNgay(String s){
         String[] part = s.trim().split("/");
         if(part[0].length()<2) s = "0"+part[0];
@@ -92,11 +92,11 @@ public class BaiToanMatHang {
             File mh_in = new File("MH.in");
             sc = new Scanner(mh_in);
             int m = sc.nextInt();
-            Map<String, MatHangg> matHang = new HashMap<>();
+            Map<String, MatHangg> matHangg = new HashMap<>();
             for(int i=0;i<m;i++){
                 sc.nextLine();
                 MatHangg mh = new MatHangg(sc.nextLine(), sc.nextLine(),sc.nextInt(),sc.nextInt());
-                matHang.put(mh.getMaMH(), mh);
+                matHangg.put(mh.getMaMH(), mh);
             }
             sc.close();
             File hd_in = new File("HD.in");
@@ -106,7 +106,7 @@ public class BaiToanMatHang {
             HoaDon[] hoaDon = new HoaDon[k];
             for(int i=0;i<k;i++){
                 String[] hd = sc.nextLine().trim().split("\\s+");
-                hoaDon[i] = new HoaDon(khachHang.get(hd[0]), matHang.get(hd[1]), Integer.parseInt(hd[2]));
+                hoaDon[i] = new HoaDon(khachHang.get(hd[0]), matHangg.get(hd[1]), Integer.parseInt(hd[2]));
             }
             for(int i=0;i<k;i++){
                 System.out.println(hoaDon[i]);

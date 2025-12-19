@@ -2,7 +2,7 @@ package com.mycompany.oopcodeptit;
 
 import java.util.*;
 
-class MatHang implements Comparable<MatHangg>{
+class MatHang implements Comparable<MatHang>{
     private String maMH, tenMH, donViTinh;
     private long giaMua, giaBan;
     private static short count=0;
@@ -16,7 +16,7 @@ class MatHang implements Comparable<MatHangg>{
     }
 
     @Override
-    public int compareTo(MatHangg o) {
+    public int compareTo(MatHang o) {
         if(this.giaBan - this.giaMua == o.giaBan - o.giaMua) return this.maMH.compareTo(o.maMH);
         else if((this.giaBan - this.giaMua) > (o.giaBan - o.giaMua)) return -1;
         else return 1;
@@ -34,13 +34,13 @@ public class DanhSachMatHang {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         sc.nextLine();
-        MatHangg[] mh = new MatHangg[n];
+        MatHang[] mh = new MatHang[n];
         for (int i = 0; i < n; i++) {
-            mh[i] = new MatHangg(sc.nextLine(), sc.nextLine(), sc.nextLong(), sc.nextLong());
+            mh[i] = new MatHang(sc.nextLine(), sc.nextLine(), sc.nextLong(), sc.nextLong());
             sc.nextLine();
         }
         Arrays.sort(mh);
-        for(MatHangg m :mh ){
+        for(MatHang m :mh ){
             System.out.println(m);
         }
     }

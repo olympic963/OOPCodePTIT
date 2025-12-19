@@ -10,9 +10,9 @@ import view.InvoiceView;
 import vn.edu.ptit.Invoice;
 
 class PaymentController{
-    private Invoice invoice;
-    private Rule rule;
-    private Student student;
+    private final Invoice invoice;
+    private final Rule rule;
+    private final Student student;
     private Subject subject;
     public PaymentController(){
         Scanner sc = new Scanner(System.in);
